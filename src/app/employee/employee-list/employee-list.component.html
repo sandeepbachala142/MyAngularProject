@@ -1,0 +1,29 @@
+<table class="table table-striped">
+    <tr>
+     <th> Emp Id </th>
+     <th> Full Name </th>
+     <th> Gender </th>
+     <th> Salary </th>
+     <th> City </th>
+     <th> State </th>
+     <th> Zipcode </th>
+     <th> Action </th>
+     </tr>
+    <tbody>
+     <tr *ngFor = "let emp of employees">
+     <td [ngStyle]="{'background-color':emp.newEmp ? 'red':'',
+                     'color':emp.newEmp?'white':''}">{{emp.emplID}} </td>
+     <!--<td [ngClass]="{'new' : emp.newEmp}">{{emp.firstName+" "+emp.middleName+" "+emp.lastName}} </td>-->
+     <td [style.color]="emp.newEmp ? 'blue' : ''">{{emp.firstName+" "+emp.middleName+" "+emp.lastName}} </td>
+     <td>{{emp.gender}}</td>
+     <td>{{emp.salary}} </td>
+     <td>{{emp.address.city}} </td>
+     <td>{{emp.address.state}} </td>
+     <td>{{emp.address.zipcode}} </td>
+     <td> <button class="btn btn-primary" type="button" (click)="edit(emp.emplID);"> Edit </button>
+          <button class="btn btn-primary" type="button" (click)="delete(emp.emplID);"> Delete </button>
+    </td>
+    </tr>
+    <tbody>
+   </table>
+   <button class="btn btn-primary" type="submit" (click)="newEmployee();"> Add New Employee</button>

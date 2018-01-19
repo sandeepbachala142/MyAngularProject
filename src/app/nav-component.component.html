@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">My Angular App</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active current" [routerLinkActiveOptions]={exact:true}><a routerLink="">Home</a></li>
+        <li class= "dropdown" routerLinkActive="active">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li routerLinkActive="active"><a routerLink="/employee/form">Form</a></li>
+                  <li routerLinkActive="active"><a routerLink="/employee/list">List</a></li>  
+                  
+                </ul>
+        </li>
+     
+        <li class= "dropdown" routerLinkActive="active">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Author
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li routerLinkActive="active"><a routerLink="/author/form">Form</a></li>
+                  <li routerLinkActive="active"><a routerLink="/author/list">List</a></li>  
+           
+                </ul>
+        </li>
+        <li class= "dropdown" routerLinkActive="active">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Course
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li routerLinkActive="active"><a routerLink="/course/form">Form</a></li>
+                  <li routerLinkActive="active"><a routerLink="/course/list">List</a></li>  
+                  
+                </ul>
+        </li>
+        
+     
+      </ul>
+    </div>
+  </nav>

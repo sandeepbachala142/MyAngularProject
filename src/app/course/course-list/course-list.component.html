@@ -1,0 +1,23 @@
+
+
+<table class="table table-striped">
+ <tr>
+  <th> Course Id </th> 
+  <th> Course Name </th>
+  <th> Course Price </th>
+  <th> Skill Level </th>
+  <th> Action </th>
+ 
+ </tr>
+ <tbody>
+  <tr *ngFor = "let course of courses">
+  <td>{{course.id}}</td>
+  <td [style.color]="course.newcourse ? 'blue' : ''">{{course.name}} </td>
+  <td>{{course.price}}</td>
+  <td>{{course.skillLevel}}</td>
+  <td> <button class="btn btn-primary" type="submit" (click)="edit(course.id);"> Edit </button>
+       <button class="btn btn-primary" type="submit" (click)="delete(course.id);">Delete</button> </td>
+  </tr>
+ <tbody>
+</table>
+<button class="btn btn-primary" type="submit" (click)="newCourse();">Create New Course</button>

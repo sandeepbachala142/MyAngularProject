@@ -1,0 +1,23 @@
+
+    
+    <table class="table table-striped">
+     <tr>
+       <th> Author ID</th>
+      <th> Full Name </th>
+      <th> Age </th>
+      <th> Gender </th>
+      <th> Action </th>
+      <!-- [style.color]="author.newAuthor ? 'blue' : ''" -->
+     </tr>
+     <tbody>
+      <tr *ngFor = "let author of authors">
+      <td>{{author._id}}</td>
+      <td>{{author.firstName+" "+author.middleName+" "+author.lastName}} </td>
+      <td>{{author.age}}</td>
+      <td>{{author.gender}}</td>
+      <td> <button type="submit" class="btn btn-primary"  (click)='edit(author._id)'>Edit</button>
+           <button type="submit" class="btn btn-primary"  (click)='delete(author._id)'>Delete</button></td>
+      </tr>
+     <tbody>
+    </table>
+    <button class="btn btn-primary" type="button" (click)="addAuthor()">Add new Author</button>

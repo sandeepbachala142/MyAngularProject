@@ -1,0 +1,40 @@
+import { Component } from '@angular/core';
+
+
+@Component({
+  selector: 'app-root',
+  template: `
+  <h1>{{title}}</h1>
+  <h1 [textContent]="title"></h1>
+  <img src="{{imgSrc}}"/> <img [src]="imgSrc"/>
+    <table>
+    <tr>
+      <td ></td>
+    </tr>
+  </table>
+  <button class="btn btn-primary" [class.active]="isActive">Class Binding</button>
+  <button class="btn btn-primary" [style.backgroundColor]="isActive  ? 'blue':'black'"> Style Binding </button><br>
+  <div (click)="ondivClick()">
+  <button (click)="onSave($event)">Saving with OnClick Event Binding</button>
+  </div>
+  <input #name (keyup.enter)="onkeyup(name.value)"/>
+  `,
+    //'./app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = "This is the pic";
+  isActive=false;
+  imgSrc = "http://lorempixel.com/400/200";
+  ondivClick(){
+console.log("inside div click");
+  }
+  onSave($event){
+    $event.stopPropagation();
+    console.log("button was clicked")
+  }
+  onkeyup(value){
+    console.log(value);
+    //console.log($event.target.value);
+  }
+ }

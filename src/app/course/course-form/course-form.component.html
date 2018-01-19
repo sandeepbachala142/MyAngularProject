@@ -1,0 +1,32 @@
+<h1>Courses List</h1>
+<br>
+<form  #f=ngForm (ngSubmit)="onSubmit(f)">
+  <div class="form-group">
+    <label for="courseName">Course Name:</label>
+    <input required #courseName="ngModel" 
+            class="form-control" 
+            [ngModel]="course.name" 
+            name="name" placeholder="Enter Course Name">
+    <div class="alert alert-danger" *ngIf="courseName.touched && !courseName.valid">
+      <div *ngIf="courseName.errors.required"> Course Name is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lastName">Course Price:</label>
+    <input required #coursePrice="ngModel" class="form-control" [ngModel]="course.price" name="price" placeholder="Enter Course Price">
+    <div class="alert alert-danger" *ngIf="coursePrice.touched && !coursePrice.valid" >
+      <div *ngIf="coursePrice.errors.required"> Course Price is required</div>
+  </div>
+  </div>
+  <div class="radio" class="form-group">
+    <label for="gender">Skill Level:</label>
+    <br>
+    <label *ngFor="let level of getKeysforSkills()">
+      <input type="radio" name="skillLevel" [ngModel]="course.skillLevel" [value]="level"> {{level}}
+    </label>
+  </div>
+  <button type="submit" class="btn btn-danger" [disabled]="!f.valid">Submit</button>
+</form>
+
+<br>
+<br>
